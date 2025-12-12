@@ -1527,8 +1527,7 @@ class ChartingState extends MusicBeatState implements PsychUIEventHandler.PsychU
 		{
 			var curTime:String = FlxStringUtil.formatTime(Conductor.songPosition / 1000, true);
 			var songLength:String = (FlxG.sound.music != null) ? FlxStringUtil.formatTime(FlxG.sound.music.length / 1000, true) : '???';
-			var str:String =  '$curTime / $songLength' +
-							  '\n\nSection: $curSec' +
+			var str:String =  'Section: $curSec' +
 							  '\nBeat: $curBeat' +
 							  '\nStep: $curStep' +
 							  '\n\nBeat Snap: ${curQuant} / 16' +

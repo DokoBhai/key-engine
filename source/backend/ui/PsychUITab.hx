@@ -39,7 +39,7 @@ class PsychUITab extends FlxSprite
 		menu = FlxDestroyUtil.destroy(menu);
 		super.destroy();
 	}
-	
+
 	public function updateMenu(parent:PsychUIBox, elapsed:Float)
 	{
 		if(menu != null && menu.exists && menu.active)

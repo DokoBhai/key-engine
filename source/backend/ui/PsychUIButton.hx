@@ -13,7 +13,7 @@ class PsychUIButton extends FlxSpriteGroup
 
 	public var onChangeState:String->Void;
 	public var onClick:Void->Void;
-	
+
 	public var clickStyle:UIStyleData = {
 		bgColor: FlxColor.BLACK,
 		textColor: FlxColor.WHITE,
@@ -25,7 +25,7 @@ class PsychUIButton extends FlxSpriteGroup
 		bgAlpha: 1
 	};
 	public var normalStyle:UIStyleData = {
-		bgColor: 0xFFAAAAAA,
+		bgColor: 0xFFCCCCCC,
 		textColor: FlxColor.BLACK,
 		bgAlpha: 1
 	};
@@ -33,17 +33,17 @@ class PsychUIButton extends FlxSpriteGroup
 	public function new(x:Float = 0, y:Float = 0, label:String = '', ?onClick:Void->Void = null, ?wid:Int = 80, ?hei:Int = 20)
 	{
 		super(x, y);
-		bg = new FlxSprite().makeGraphic(1, 1, FlxColor.WHITE);
+		bg = new FlxSprite().loadGraphic(Paths.image('psych-ui/button', 'embed'));
 		add(bg);
-		bg.color = 0xFFAAAAAA;
-		bg.alpha = 0.6;
+		bg.color = 0xFFCCCCCC;
+		bg.alpha = 1;
 
 		text = new FlxText(0, 0, 1, '');
 		text.alignment = CENTER;
 		add(text);
 		resize(wid, hei);
 		this.label = label;
-		
+
 		this.onClick = onClick;
 		forceCheckNext = true;
 	}
@@ -63,7 +63,7 @@ class PsychUIButton extends FlxSpriteGroup
 			text.color = normalStyle.textColor;
 			_firstFrame = false;
 		}
-		
+
 		if(isClicked && FlxG.mouse.released)
 		{
 			forceCheckNext = true;
